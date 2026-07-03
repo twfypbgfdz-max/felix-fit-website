@@ -50,8 +50,8 @@
     .hero-social p { color: var(--muted); font-size: 14px; }
     .hero-social a { flex: 0 0 auto; border-radius: 999px; border: 1px solid var(--ink); padding: 10px 14px; font-size: 13px; font-weight: 900; text-decoration: none; transition: transform .18s ease, background .18s ease, color .18s ease; }
     .hero-social a:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
-    .marquee { margin-top: 64px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 15px 0; overflow: hidden; color: var(--olive-dark); font-weight: 900; text-transform: uppercase; letter-spacing: .1em; font-size: 12px; white-space: nowrap; animation: heroRise .7s .34s ease-out both; }
-    .marquee span { margin-right: 36px; }
+    .marquee { margin-top: 64px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 15px 0; overflow: visible; color: var(--olive-dark); font-weight: 900; text-transform: uppercase; letter-spacing: .1em; font-size: 12px; white-space: normal; display: flex; flex-wrap: wrap; gap: 14px 36px; animation: heroRise .7s .34s ease-out both; }
+    .marquee span { margin-right: 0; }
     section { padding: 78px 0; }
     section + section { border-top: 1px solid var(--line); }
     .intro { display: grid; grid-template-columns: .72fr 1.28fr; gap: 70px; align-items: start; }
@@ -116,71 +116,23 @@
     @keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes heroRise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 880px) { nav .wrap { align-items: flex-start; } .navlinks { gap: 14px; font-size: 11px; } .hero { padding-top: 62px; } .hero-top, .intro, .split, .apps-layout { grid-template-columns: 1fr; gap: 34px; } .hero-side { border-left: 0; border-top: 2px solid var(--ink); padding-left: 0; padding-top: 18px; } .facts, .current-grid, .principles-grid { grid-template-columns: repeat(2, 1fr); } .topics-head { display: block; } .topics-head p { margin-top: 18px; } .topic { grid-template-columns: 1fr; gap: 12px; } .note-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 520px) { .wrap { width: min(100% - 28px, 1120px); } h1 { font-size: clamp(44px, 16vw, 72px); } section { padding: 58px 0; } .facts, .current-grid, .principles-grid { grid-template-columns: 1fr; } .hero-actions { flex-direction: column; } .btn { width: 100%; } .hero-social { align-items: stretch; flex-direction: column; } .hero-social a { text-align: center; } .marquee { display: flex; flex-wrap: wrap; gap: 10px 18px; overflow: visible; white-space: normal; font-size: 11px; line-height: 1.35; letter-spacing: .08em; } .marquee span { margin-right: 0; overflow-wrap: anywhere; } .topic:hover { transform: none; } .note { min-height: 210px; } .socials { justify-content: stretch; } .socials a { flex: 1 1 45%; text-align: center; } }
+    @media (max-width: 520px) { .wrap { width: min(100% - 28px, 1120px); } h1 { font-size: clamp(44px, 16vw, 72px); } section { padding: 58px 0; } .facts, .current-grid, .principles-grid { grid-template-columns: 1fr; } .hero-actions { flex-direction: column; } .btn { width: 100%; } .hero-social { align-items: stretch; flex-direction: column; } .hero-social a { text-align: center; } .marquee { gap: 10px 18px; font-size: 11px; line-height: 1.35; letter-spacing: .08em; } .marquee span { overflow-wrap: anywhere; } .topic:hover { transform: none; } .note { min-height: 210px; } .socials { justify-content: stretch; } .socials a { flex: 1 1 45%; text-align: center; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } .reveal, .reveal-stagger > * { opacity: 1; transform: none; } }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="wrap">
-      <a href="#top" class="brand">Felix<span>.fit</span></a>
-      <div class="navlinks" aria-label="Seitennavigation">
-        <a href="#profil">Profil</a>
-        <a href="#aktuell">Aktuell</a>
-        <a href="#themen">Themen</a>
-        <a href="#apps">Apps</a>
-        <a href="#journal">Journal</a>
-        <a class="nav-instagram" href="https://www.instagram.com/felixx_loed" target="_blank" rel="noopener">Instagram</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-    </div>
-  </nav>
-
+  <nav><div class="wrap"><a href="#top" class="brand">Felix<span>.fit</span></a><div class="navlinks" aria-label="Seitennavigation"><a href="#profil">Profil</a><a href="#aktuell">Aktuell</a><a href="#themen">Themen</a><a href="#apps">Apps</a><a href="#journal">Journal</a><a class="nav-instagram" href="https://www.instagram.com/felixx_loed" target="_blank" rel="noopener">Instagram</a><a href="#kontakt">Kontakt</a></div></div></nav>
   <main id="top">
-    <header class="hero">
-      <div class="wrap">
-        <div class="hero-top">
-          <div>
-            <span class="kicker">Fitness · Ernährung · Alltag · KI</span>
-            <h1>Fitness verstehen. Alltag strukturieren. Tools bauen.</h1>
-            <p class="hero-copy">Ich bin Felix, 20 Jahre alt, Sport- und Fitnesskaufmann in Ausbildung und Fitnesstrainer mit B-Lizenz. Hier sammle ich Erfahrungen, Gedanken und Learnings aus Training, Ernährung, Alltag, KI und eigenen App-Ideen.</p>
-            <div class="hero-actions">
-              <a class="btn primary" href="#profil">Mehr über Felix</a>
-              <a class="btn secondary" href="#aktuell">Aktueller Stand</a>
-              <a class="btn instagram" href="https://www.instagram.com/felixx_loed" target="_blank" rel="noopener">Instagram ansehen</a>
-            </div>
-            <div class="hero-social" aria-label="Instagram Hinweis">
-              <div>
-                <small>Mehr Alltag & Training</small>
-                <strong>@felixx_loed</strong>
-                <p>Kurze Einblicke, Gym-Content und Updates landen zuerst auf Instagram.</p>
-              </div>
-              <a href="https://www.instagram.com/felixx_loed" target="_blank" rel="noopener">Folgen</a>
-            </div>
-          </div>
-          <aside class="hero-side" aria-label="Kurzprofil"><strong>Mehr als nur Gym.</strong>Diese Website ist mein persönliches Fitness-Journal: Training, Studioalltag, Ernährung, Alltag und digitale Tools, die mir helfen, Dinge besser zu verstehen und umzusetzen.</aside>
-        </div>
-        <div class="marquee" aria-hidden="true"><span>Sport- und Fitnesskaufmann</span><span>Fitnesstrainer B-Lizenz</span><span>Ernährungstrainer B-Lizenz: Ergebnis offen</span><span>Krafttraining</span><span>KI & eigene Apps</span></div>
-      </div>
-    </header>
-
+    <header class="hero"><div class="wrap"><div class="hero-top"><div><span class="kicker">Fitness · Ernährung · Alltag · KI</span><h1>Fitness verstehen. Alltag strukturieren. Tools bauen.</h1><p class="hero-copy">Ich bin Felix, 20 Jahre alt, Sport- und Fitnesskaufmann in Ausbildung und Fitnesstrainer mit B-Lizenz. Hier sammle ich Erfahrungen, Gedanken und Learnings aus Training, Ernährung, Alltag, KI und eigenen App-Ideen.</p><div class="hero-actions"><a class="btn primary" href="#profil">Mehr über Felix</a><a class="btn secondary" href="#aktuell">Aktueller Stand</a><a class="btn instagram" href="https://www.instagram.com/felixx_loed" target="_blank" rel="noopener">Instagram ansehen</a></div><div class="hero-social" aria-label="Instagram Hinweis"><div><small>Mehr Alltag & Training</small><strong>@felixx_loed</strong><p>Kurze Einblicke, Gym-Content und Updates landen zuerst auf Instagram.</p></div><a href="https://www.instagram.com/felixx_loed" target="_blank" rel="noopener">Folgen</a></div></div><aside class="hero-side" aria-label="Kurzprofil"><strong>Mehr als nur Gym.</strong>Diese Website ist mein persönliches Fitness-Journal: Training, Studioalltag, Ernährung, Alltag und digitale Tools, die mir helfen, Dinge besser zu verstehen und umzusetzen.</aside></div><div class="marquee" aria-hidden="true"><span>Sport- und Fitnesskaufmann</span><span>Fitnesstrainer B-Lizenz</span><span>Ernährungstrainer B-Lizenz: Ergebnis offen</span><span>Krafttraining</span><span>KI & eigene Apps</span></div></div></header>
     <section id="profil"><div class="wrap intro reveal"><div><span class="kicker">Profil</span><h2>Mittendrin statt fertig inszeniert.</h2></div><div class="intro-text"><p>Ich mache die Ausbildung zum <strong>Sport- und Fitnesskaufmann</strong> und arbeite praktisch im Studio. Dabei geht es für mich nicht nur um Übungen und Trainingspläne, sondern auch um Menschen, Alltag, Struktur und die Frage, wie Fitness wirklich umsetzbar bleibt.</p><p>Ich trainiere seit etwa <strong>3 Jahren</strong>, davon seit ungefähr <strong>1,5 Jahren richtig intensiv</strong> — nicht nur im Training selbst, sondern auch vom Wissen her. Meine Fitnesstrainer B-Lizenz habe ich bereits. Die Prüfung zum Ernährungstrainer B habe ich gemacht, das Ergebnis steht noch aus.</p><p>Diese Seite ist kein Verkaufsraum. Sie ist mein Ort, um Fitness, Ernährung, Alltag, KI und eigene App-Ideen ehrlich zu dokumentieren — so, wie ich es selbst lerne, teste und besser verstehe.</p></div></div><div class="wrap facts reveal-stagger" aria-label="Kurzfakten"><div class="fact"><small>Alter</small><strong>20 Jahre</strong></div><div class="fact"><small>Ausbildung</small><strong>Sport- und<br>Fitnesskaufmann</strong></div><div class="fact"><small>Lizenz</small><strong>Fitnesstrainer<br>B-Lizenz</strong></div><div class="fact"><small>Ernährung</small><strong>B-Lizenz Prüfung<br>gemacht, Ergebnis offen</strong></div></div></section>
-
     <section id="aktuell"><div class="wrap reveal"><span class="kicker">Aktuell bei mir</span><h2>Woran ich gerade arbeite.</h2><div class="current-grid reveal-stagger"><div class="current-card"><small>Ausbildung</small><strong>Studio-Praxis & Berufsschule</strong><p>Alles, was ich dort lerne, wird mit echten Situationen im Studio abgeglichen.</p></div><div class="current-card"><small>Training</small><strong>Krafttraining intensiver verstehen</strong><p>Mehr Struktur, bessere Ausführung, sinnvollere Planung und ehrliche Fortschritte.</p></div><div class="current-card"><small>Ernährung</small><strong>Ergebnis der B-Lizenz abwarten</strong><p>Die Prüfung ist gemacht. Sobald das Ergebnis da ist, wird der Stand aktualisiert.</p></div><div class="current-card"><small>Digital</small><strong>Fitness-Apps & KI ausprobieren</strong><p>Eigene Tools bauen, testen und schauen, was im Alltag wirklich hilft.</p></div></div></div></section>
-
     <section id="themen"><div class="wrap reveal"><div class="topics-head"><div><span class="kicker">Themen</span><h2>Worüber ich hier schreibe.</h2></div><p>Keine perfekte Experten-Fassade. Eher ein klarer Blick auf Dinge, die mir in Training, Ausbildung, Studioalltag und beim Bauen eigener digitaler Tools begegnen.</p></div><div class="topic-list reveal-stagger"><article class="topic"><div class="topic-number">01 / Fitness</div><h3>Training, Struktur und Fortschritt.</h3><p>Was einen Trainingsplan brauchbar macht, warum viele Dinge unnötig kompliziert werden und welche Erfahrungen ich selbst im Krafttraining sammle.</p></article><article class="topic"><div class="topic-number">02 / Ernährung</div><h3>Grundlagen, die im Alltag funktionieren.</h3><p>Kalorien, Makros, Routinen und einfache Entscheidungen. Nicht perfekt, nicht extrem, sondern verständlich und realistisch.</p></article><article class="topic"><div class="topic-number">03 / Alltag</div><h3>Dranbleiben ohne Dauer-Perfektion.</h3><p>Training neben Arbeit, Berufsschule, Freizeit und allem, was dazwischenkommt. Genau dort entscheidet sich, ob Fitness langfristig funktioniert.</p></article><article class="topic"><div class="topic-number">04 / KI & Apps</div><h3>Tools bauen, die mir selbst helfen.</h3><p>Eigene App-Ideen, KI im Alltag, Trainings- und Ernährungstools und der Versuch, digitale Helfer praktisch statt kompliziert zu machen.</p></article></div></div></section>
-
     <section class="apps" id="apps"><div class="wrap apps-layout reveal"><div><span class="kicker">KI & Apps</span><h2>Fitness ist auch ein Systemproblem.</h2><p class="apps-copy">Ich baue und teste eigene kleine Tools, weil Training, Ernährung und Alltag oft nicht am Wissen scheitern, sondern an Überblick, Planung und Konsequenz. KI ist für mich kein Zaubertrick, sondern ein Werkzeug, um Dinge schneller zu strukturieren.</p></div><div class="app-list reveal-stagger"><div class="app-item"><strong>Trainingsplanung</strong><p>Pläne, Wochenstruktur, Fortschritt und Anpassungen einfacher erfassen und besser verstehen.</p></div><div class="app-item"><strong>Ernährung & Alltag</strong><p>Kalorien, Grundlagen und Routinen so abbilden, dass sie nicht nur in der Theorie funktionieren.</p></div><div class="app-item"><strong>KI als Arbeitshelfer</strong><p>Ideen sortieren, Texte verbessern, Wissen strukturieren und eigene Projekte schneller weiterbringen.</p></div></div></div></section>
-
     <section><div class="wrap reveal"><span class="kicker">Grundsätze</span><h2>Woran ich mich orientiere.</h2><div class="principles-grid reveal-stagger"><div class="principle"><small>01</small><strong>Basics schlagen Chaos.</strong><p>Ein einfacher Plan, der gemacht wird, ist besser als ein perfekter Plan, der nur im Kopf existiert.</p></div><div class="principle"><small>02</small><strong>Alltag entscheidet.</strong><p>Fitness muss zu Arbeit, Schule, Freizeit und Energie passen. Sonst hält es nicht lange.</p></div><div class="principle"><small>03</small><strong>Tools sind Werkzeuge.</strong><p>Apps und KI ersetzen keine Arbeit, können aber helfen, Struktur reinzubringen.</p></div><div class="principle"><small>04</small><strong>Ehrlich bleiben.</strong><p>Lieber realistisch dokumentieren, was ich weiß und lerne, statt größer wirken zu wollen.</p></div></div></div></section>
-
     <section class="journal" id="journal"><div class="wrap reveal"><span class="kicker">Journal</span><h2>Notizen, die hier entstehen.</h2><p class="journal-intro">Der Bereich soll mit der Zeit wachsen: kurze Gedanken, Beobachtungen aus dem Studio, eigene Learnings, Fitness-Basics und Ideen rund um KI, Apps und Alltag.</p><div class="note-grid reveal-stagger"><article class="note"><div><small>Journal-Idee</small><h3>Was ich im Studio immer wieder sehe</h3></div><p>Typische Muster, Anfängerfehler und Dinge, die man mit etwas Struktur schnell verbessern kann.</p></article><article class="note"><div><small>Journal-Idee</small><h3>Ernährung ohne Perfektionsdruck</h3></div><p>Wie man Grundlagen versteht, ohne den Alltag komplett nach einer App auszurichten.</p></article><article class="note"><div><small>Journal-Idee</small><h3>Warum ich eigene Apps baue</h3></div><p>KI, Trainingsplanung und kleine Tools, die nicht perfekt sein müssen, sondern im Alltag wirklich helfen sollen.</p></article></div></div></section>
-
     <section><div class="wrap split reveal"><p class="quote">„Fitness muss nicht lauter werden. Nur verständlicher.“</p><div class="plain-list"><div><strong>Fitness.</strong><br>Training, Fortschritt, Übungen und das, was im Studio praktisch zählt.</div><div><strong>Ernährung & Alltag.</strong><br>Grundlagen, Routinen und realistische Umsetzung statt perfekte Theorie.</div><div><strong>KI & Apps.</strong><br>Eigene digitale Tools, kleine Systeme und Ideen, die Training und Alltag einfacher machen können.</div></div></div></section>
-
     <section class="contact" id="kontakt"><div class="wrap reveal"><span class="kicker">Mehr von mir</span><h2>Feedback, Fragen oder Austausch?</h2><p>Wenn du eine Frage hast, Feedback geben willst oder dich über Training, Ernährung, Alltag, KI oder eigene App-Ideen austauschen möchtest, findest du mich hier.</p><div class="socials" aria-label="Social Media Links"><a href="https://www.instagram.com/felixx_loed" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@felixx_loed" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/@felixx_loed" target="_blank" rel="noopener">YouTube</a><a href="https://www.facebook.com/felixx_loed" target="_blank" rel="noopener">Facebook</a></div></div></section>
   </main>
-
   <footer><div class="wrap"><span>© 2026 Felix.fit — Fitness, Ernährung, Alltag, KI & Apps aus meiner Sicht.</span><span>Persönliche Erfahrungen und Grundlagen. Keine medizinische Beratung. <!-- TODO: Impressum & Datenschutz ergänzen, sobald echte Angaben vorliegen. --></span></div></footer>
   <script>
     const revealItems = document.querySelectorAll('.reveal, .reveal-stagger');
@@ -194,9 +146,7 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       revealItems.forEach((item) => revealObserver.observe(item));
-    } else {
-      revealItems.forEach((item) => item.classList.add('is-visible'));
-    }
+    } else { revealItems.forEach((item) => item.classList.add('is-visible')); }
   </script>
   <!-- pages deploy retry -->
 </body>
